@@ -72,6 +72,7 @@
             this.PutIntoBinbtn.Size = new System.Drawing.Size(203, 29);
             this.PutIntoBinbtn.TabIndex = 3;
             this.PutIntoBinbtn.Text = "Put into Bin";
+            this.PutIntoBinbtn.Click += new System.EventHandler(this.PutIntoBinbtn_Click);
             // 
             // BinToBinbtn
             // 
@@ -89,6 +90,7 @@
             this.IssueTheWebsbtn.Size = new System.Drawing.Size(203, 29);
             this.IssueTheWebsbtn.TabIndex = 5;
             this.IssueTheWebsbtn.Text = "Issue the Webs";
+            this.IssueTheWebsbtn.Click += new System.EventHandler(this.IssueTheWebsbtn_Click);
             // 
             // HandoverToFinishingbtn
             // 
@@ -97,6 +99,7 @@
             this.HandoverToFinishingbtn.Size = new System.Drawing.Size(203, 29);
             this.HandoverToFinishingbtn.TabIndex = 6;
             this.HandoverToFinishingbtn.Text = "Handover to Finishing";
+            this.HandoverToFinishingbtn.Click += new System.EventHandler(this.HandoverToFinishingbtn_Click);
             // 
             // frmMenu
             // 

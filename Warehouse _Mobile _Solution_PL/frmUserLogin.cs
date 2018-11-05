@@ -84,6 +84,7 @@ namespace Warehouse__Mobile__Solution_PL
             UnloadScanner();
             frmMenu menu = new frmMenu();
             menu.RefToUserLogin = this;
+            menu.userBarcode = TheReaderData.Text;
             menu.Show();
             this.Hide();
         }
@@ -110,7 +111,7 @@ namespace Warehouse__Mobile__Solution_PL
                 barcodeScanner.AttachReadNotify(myReadNotifyHandler);
                 //this.myStatusNotifyHandler = new EventHandler(myReader_StatusNotify);
                 //barcodeScanner.AttachStatusNotify(myStatusNotifyHandler);
-                this.barcodeScanner.StartRead(true);
+                this.barcodeScanner.StartRead(false);
             }
         }
 

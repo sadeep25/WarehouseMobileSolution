@@ -12,6 +12,7 @@ namespace Warehouse__Mobile__Solution_PL
     public partial class frmMenu : Form
     {
         public Form RefToUserLogin { get; set; }
+        public string userBarcode { get; set; }
         public frmMenu()
         {
             InitializeComponent();
@@ -46,6 +47,31 @@ namespace Warehouse__Mobile__Solution_PL
         {
             frmBinToBin form = new frmBinToBin();
             form.RefToMenu = this;
+            this.Hide();
+            form.Show();
+        }
+
+        private void PutIntoBinbtn_Click(object sender, EventArgs e)
+        {
+            frmPutIntoBin form = new frmPutIntoBin();
+            form.RefToMenu = this;
+            this.Hide();
+            form.Show();
+        }
+
+        private void IssueTheWebsbtn_Click(object sender, EventArgs e)
+        {
+            frmIssueWebs form = new frmIssueWebs();
+            form.RefToMenu = this;
+            this.Hide();
+            form.Show();
+        }
+
+        private void HandoverToFinishingbtn_Click(object sender, EventArgs e)
+        {
+            frmHandOver form = new frmHandOver();
+            form.RefToMenu = this;
+            form.userBarcode = this.userBarcode;
             this.Hide();
             form.Show();
         }

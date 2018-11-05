@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.putIntoBinSaveBtn = new System.Windows.Forms.Button();
+            this.putIntoBinStatuslbl = new System.Windows.Forms.Label();
             this.webLbl = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.binLbl = new System.Windows.Forms.Label();
-            this.scanWebLbl = new System.Windows.Forms.Label();
             this.scanBinLbl = new System.Windows.Forms.Label();
+            this.scanWebLbl = new System.Windows.Forms.Label();
+            this.binLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,22 +47,23 @@
             this.label1.Size = new System.Drawing.Size(100, 20);
             this.label1.Text = "Put Into Bin";
             // 
-            // button1
+            // putIntoBinSaveBtn
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(56, 182);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Save";
+            this.putIntoBinSaveBtn.Enabled = false;
+            this.putIntoBinSaveBtn.Location = new System.Drawing.Point(56, 182);
+            this.putIntoBinSaveBtn.Name = "putIntoBinSaveBtn";
+            this.putIntoBinSaveBtn.Size = new System.Drawing.Size(112, 29);
+            this.putIntoBinSaveBtn.TabIndex = 2;
+            this.putIntoBinSaveBtn.Text = "Save";
+            this.putIntoBinSaveBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label2
+            // putIntoBinStatuslbl
             // 
-            this.label2.Location = new System.Drawing.Point(19, 236);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 20);
-            this.label2.Text = "[Scan the web to store ]";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.putIntoBinStatuslbl.Location = new System.Drawing.Point(19, 236);
+            this.putIntoBinStatuslbl.Name = "putIntoBinStatuslbl";
+            this.putIntoBinStatuslbl.Size = new System.Drawing.Size(185, 20);
+            this.putIntoBinStatuslbl.Text = "[Scan the web to store ]";
+            this.putIntoBinStatuslbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // webLbl
             // 
@@ -81,12 +82,11 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(234, 100);
             // 
-            // binLbl
+            // scanBinLbl
             // 
-            this.binLbl.Location = new System.Drawing.Point(3, 58);
-            this.binLbl.Name = "binLbl";
-            this.binLbl.Size = new System.Drawing.Size(47, 20);
-            this.binLbl.Text = "Bin";
+            this.scanBinLbl.Location = new System.Drawing.Point(36, 58);
+            this.scanBinLbl.Name = "scanBinLbl";
+            this.scanBinLbl.Size = new System.Drawing.Size(195, 20);
             // 
             // scanWebLbl
             // 
@@ -94,11 +94,12 @@
             this.scanWebLbl.Name = "scanWebLbl";
             this.scanWebLbl.Size = new System.Drawing.Size(195, 20);
             // 
-            // scanBinLbl
+            // binLbl
             // 
-            this.scanBinLbl.Location = new System.Drawing.Point(36, 58);
-            this.scanBinLbl.Name = "scanBinLbl";
-            this.scanBinLbl.Size = new System.Drawing.Size(195, 20);
+            this.binLbl.Location = new System.Drawing.Point(3, 58);
+            this.binLbl.Name = "binLbl";
+            this.binLbl.Size = new System.Drawing.Size(47, 20);
+            this.binLbl.Text = "Bin";
             // 
             // frmPutIntoBin
             // 
@@ -107,12 +108,13 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 267);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.putIntoBinStatuslbl);
+            this.Controls.Add(this.putIntoBinSaveBtn);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.Name = "frmPutIntoBin";
             this.Text = "Warehouse Mobile Solution";
+            this.Load += new System.EventHandler(this.frmPutIntoBin_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -121,8 +123,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button putIntoBinSaveBtn;
+        private System.Windows.Forms.Label putIntoBinStatuslbl;
         private System.Windows.Forms.Label webLbl;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label scanBinLbl;

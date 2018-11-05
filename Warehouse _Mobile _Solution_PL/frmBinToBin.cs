@@ -85,6 +85,7 @@ namespace Warehouse__Mobile__Solution_PL
                         selectedWebsToMove = form.ReturnValue1;
                         loadWebList(selectedWebsToMove);
                         isBinFromScaned = true;
+                        bintibinstatuslbl.Text = "[Scan the bin to move selected webs]";
                         this.barcodeScanner.StartRead(true);
                     }
 
@@ -96,6 +97,7 @@ namespace Warehouse__Mobile__Solution_PL
                 bintolbl.Visible = true;
                 binscantolbl.Text = TheReaderData.Text;
                 binscantolbl.Visible = true;
+                bintibinstatuslbl.Text = "[Confirm action]";
                 barcodeScanner.DetachReadNotify();
                 barcodeScanner.DetachStatusNotify();
                 barcodeScanner.TermReader();
