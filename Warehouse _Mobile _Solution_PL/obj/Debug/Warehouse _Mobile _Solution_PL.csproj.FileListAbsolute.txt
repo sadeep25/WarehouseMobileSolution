@@ -1,0 +1,41 @@
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Warehouse _Mobile _Solution_PL.exe
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Warehouse _Mobile _Solution_PL.pdb
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.Properties.Resources.resources
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse _Mobile _Solution_PL.csproj.GenerateResource.Cache
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse _Mobile _Solution_PL.exe
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse _Mobile _Solution_PL.pdb
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Symbol.Barcode2.DesignCF35.dll
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Symbol.Barcode2.DesignCF35.xml
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmBinToBin.resources
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmHandOver.resources
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmInHouseAcknowledgement.resources
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmIssueWebs.resources
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmMenu.resources
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmPutIntoBin.resources
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmUserLogin.resources
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmFlash.resources
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmBinToBin.resources
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmFlash.resources
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmHandOver.resources
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmInHouseAcknowledgement.resources
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmIssueWebs.resources
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmMenu.resources
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmPutIntoBin.resources
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmUserLogin.resources
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.Properties.Resources.resources
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse _Mobile _Solution_PL.csproj.GenerateResource.Cache
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Warehouse _Mobile _Solution_PL.exe
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Warehouse _Mobile _Solution_PL.pdb
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse _Mobile _Solution_PL.exe
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse _Mobile _Solution_PL.pdb
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Symbol.Barcode.dll
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Symbol.dll
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Warehouse_Moblie_Solution_Common.dll
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Symbol.StandardForms.dll
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Warehouse_Moblie_Solution_Common.pdb
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Symbol.xml
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Symbol.StandardForms.xml
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\bin\Debug\Symbol.Barcode.xml
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse _Mobile _Solution_PL\obj\Debug\Warehouse__Mobile__Solution_PL.frmWebsDialog.resources

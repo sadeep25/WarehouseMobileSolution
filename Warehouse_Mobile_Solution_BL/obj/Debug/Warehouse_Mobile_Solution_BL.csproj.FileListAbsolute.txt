@@ -1,0 +1,10 @@
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse_Mobile_Solution_BL\bin\Debug\Warehouse_Mobile_Solution_BL.dll
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse_Mobile_Solution_BL\bin\Debug\Warehouse_Mobile_Solution_BL.pdb
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse_Mobile_Solution_BL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse_Mobile_Solution_BL\obj\Debug\Warehouse_Mobile_Solution_BL.dll
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse_Mobile_Solution_BL\obj\Debug\Warehouse_Mobile_Solution_BL.pdb
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Mobile_Solution_BL\bin\Debug\Warehouse_Mobile_Solution_BL.dll
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Mobile_Solution_BL\bin\Debug\Warehouse_Mobile_Solution_BL.pdb
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Mobile_Solution_BL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Mobile_Solution_BL\obj\Debug\Warehouse_Mobile_Solution_BL.dll
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Mobile_Solution_BL\obj\Debug\Warehouse_Mobile_Solution_BL.pdb

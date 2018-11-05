@@ -1,0 +1,16 @@
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Warehouse_Moblie_Solution_Common.dll
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Warehouse_Moblie_Solution_Common.pdb
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\obj\Debug\Warehouse_Moblie_Solution_Common.dll
+C:\Users\sadee\Documents\Visual Studio 2008\Projects\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\obj\Debug\Warehouse_Moblie_Solution_Common.pdb
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Warehouse_Moblie_Solution_Common.dll
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Warehouse_Moblie_Solution_Common.pdb
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\obj\Debug\Warehouse_Moblie_Solution_Common.dll
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\obj\Debug\Warehouse_Moblie_Solution_Common.pdb
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Symbol.Barcode.dll
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Symbol.dll
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Symbol.StandardForms.dll
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Symbol.xml
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Symbol.StandardForms.xml
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Symbol.Barcode.xml
