@@ -30,25 +30,25 @@
         private void InitializeComponent()
         {
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblLoginHeader = new System.Windows.Forms.Label();
+            this.lblScan = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lblLoginHeader
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(3, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 20);
-            this.label1.Text = "Log In";
+            this.lblLoginHeader.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.lblLoginHeader.Location = new System.Drawing.Point(3, 26);
+            this.lblLoginHeader.Name = "lblLoginHeader";
+            this.lblLoginHeader.Size = new System.Drawing.Size(100, 20);
+            this.lblLoginHeader.Text = "Log In";
             // 
-            // label2
+            // lblScan
             // 
-            this.label2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label2.Location = new System.Drawing.Point(62, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 20);
-            this.label2.Text = "Scan Your Barcode";
+            this.lblScan.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lblScan.Location = new System.Drawing.Point(62, 117);
+            this.lblScan.Name = "lblScan";
+            this.lblScan.Size = new System.Drawing.Size(119, 20);
+            this.lblScan.Text = "Scan Your Barcode";
             // 
             // frmUserLogin
             // 
@@ -56,8 +56,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 267);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblScan);
+            this.Controls.Add(this.lblLoginHeader);
             this.Menu = this.mainMenu1;
             this.Name = "frmUserLogin";
             this.Text = "Warehouse Mobile Solution";
@@ -69,7 +69,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblLoginHeader;
+        private System.Windows.Forms.Label lblScan;
     }
 }

@@ -28,10 +28,10 @@ namespace Warehouse__Mobile__Solution_PL
 
         private void frmPutIntoBin_Load(object sender, EventArgs e)
         {
-            this.locadScanner();
+            this.LocadScanner();
         }
 
-        private void locadScanner()
+        private void LocadScanner()
         {
             // Initialize the ScanSampleAPI reference.
             this.barcodeScanner = new BarcodeScanner();
@@ -53,7 +53,7 @@ namespace Warehouse__Mobile__Solution_PL
                 barcodeScanner.AttachReadNotify(myReadNotifyHandler);
                 //this.myStatusNotifyHandler = new EventHandler(myReader_StatusNotify);
                 //barcodeScanner.AttachStatusNotify(myStatusNotifyHandler);
-                this.barcodeScanner.StartRead(true);
+                this.barcodeScanner.StartRead(false);
             }
         }
         private void myReader_ReadNotify(object Sender, EventArgs e)
@@ -93,29 +93,44 @@ namespace Warehouse__Mobile__Solution_PL
             //write handling logic//
             if (!isWebScaned)
             {
-                scanWebLbl.Text = TheReaderData.Text;
-                putIntoBinStatuslbl.Text = "[Scan a bin to store]";
+                lblScanWeb.Text = TheReaderData.Text;
+                lblPutIntoBinStatus.Text = "[Scan a bin to store]";
                 isWebScaned = true;
                 this.barcodeScanner.StartRead(false);
             }
             else
             {
-                scanBinLbl.Text = TheReaderData.Text;
-                putIntoBinStatuslbl.Text = "[Click save to confirm]";
-                barcodeScanner.DetachReadNotify();
-                barcodeScanner.DetachStatusNotify();
-                barcodeScanner.TermReader();
-                putIntoBinSaveBtn.Enabled = true;
+                lblScanBin.Text = TheReaderData.Text;
+                lblPutIntoBinStatus.Text = "[Click save to confirm]";
+                btnPutIntoBinSave.Enabled = true;
 
             }
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnPutIntoBinSave_Click(object sender, EventArgs e)
         {
-
+            AutoClosingMessageBox.Show("Successfully Saved", "Caption", 1000);
+            lblPutIntoBinStatus.Text = "[Scan a Web]";
+            this.lblScanWeb.Text = "";
+            this.lblScanBin.Text = "";
+            this.isWebScaned = false;
+            btnPutIntoBinSave.Enabled = false;
+            this.barcodeScanner.StartRead(false);
+            //this.Refresh();
         }
 
+        private void frmPutIntoBin_Closing(object sender, CancelEventArgs e)
+        {
+            this.UnloadScanner();
+            this.RefToMenu.Show();
+        }
 
+        private void UnloadScanner()
+        {
+            barcodeScanner.DetachReadNotify();
+            barcodeScanner.DetachStatusNotify();
+            barcodeScanner.TermReader();
+        }
     }
 }

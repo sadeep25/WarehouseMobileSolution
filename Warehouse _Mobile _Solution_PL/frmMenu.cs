@@ -28,7 +28,7 @@ namespace Warehouse__Mobile__Solution_PL
             RefToUserLogin.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnInHouseAcknowledgement_Click(object sender, EventArgs e)
         {
             frmInHouseAcknowledgement AcknowlegmentForm = new frmInHouseAcknowledgement();
             AcknowlegmentForm.RefToMenu = this;
@@ -36,14 +36,14 @@ namespace Warehouse__Mobile__Solution_PL
             AcknowlegmentForm.Show();
         }
 
-        private void LogOutbtn_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
             frmUserLogin login = new frmUserLogin();
             login.Show();
             this.Close();
         }
 
-        private void BinToBinbtn_Click(object sender, EventArgs e)
+        private void btnBinToBin_Click(object sender, EventArgs e)
         {
             frmBinToBin form = new frmBinToBin();
             form.RefToMenu = this;
@@ -51,7 +51,7 @@ namespace Warehouse__Mobile__Solution_PL
             form.Show();
         }
 
-        private void PutIntoBinbtn_Click(object sender, EventArgs e)
+        private void btnPutIntoBin_Click(object sender, EventArgs e)
         {
             frmPutIntoBin form = new frmPutIntoBin();
             form.RefToMenu = this;
@@ -59,7 +59,7 @@ namespace Warehouse__Mobile__Solution_PL
             form.Show();
         }
 
-        private void IssueTheWebsbtn_Click(object sender, EventArgs e)
+        private void btnIssueTheWebs_Click(object sender, EventArgs e)
         {
             frmIssueWebs form = new frmIssueWebs();
             form.RefToMenu = this;
@@ -67,7 +67,7 @@ namespace Warehouse__Mobile__Solution_PL
             form.Show();
         }
 
-        private void HandoverToFinishingbtn_Click(object sender, EventArgs e)
+        private void btnHandoverToFinishing_Click(object sender, EventArgs e)
         {
             frmHandOver form = new frmHandOver();
             form.RefToMenu = this;

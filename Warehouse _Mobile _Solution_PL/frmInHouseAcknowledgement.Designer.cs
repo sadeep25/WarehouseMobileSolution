@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.InHouselbl = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lblInHouseAcknowledgment = new System.Windows.Forms.Label();
+            this.lvInHouseAcknowledgement = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReceiveToWarehouse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // InHouselbl
+            // lblInHouseAcknowledgment
             // 
-            this.InHouselbl.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.InHouselbl.Location = new System.Drawing.Point(13, 25);
-            this.InHouselbl.Name = "InHouselbl";
-            this.InHouselbl.Size = new System.Drawing.Size(180, 20);
-            this.InHouselbl.Text = "In-House-acknowledgment";
+            this.lblInHouseAcknowledgment.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.lblInHouseAcknowledgment.Location = new System.Drawing.Point(13, 25);
+            this.lblInHouseAcknowledgment.Name = "lblInHouseAcknowledgment";
+            this.lblInHouseAcknowledgment.Size = new System.Drawing.Size(180, 20);
+            this.lblInHouseAcknowledgment.Text = "In-House-acknowledgment";
             // 
-            // listView1
+            // lvInHouseAcknowledgement
             // 
-            this.listView1.Activation = System.Windows.Forms.ItemActivation.TwoClick;
-            this.listView1.Columns.Add(this.columnHeader1);
-            this.listView1.Columns.Add(this.columnHeader2);
-            this.listView1.Columns.Add(this.columnHeader3);
-            this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(13, 48);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(214, 166);
-            this.listView1.TabIndex = 1;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.ItemActivate += new System.EventHandler(this.listView1_ItemActivate);
+            this.lvInHouseAcknowledgement.Activation = System.Windows.Forms.ItemActivation.TwoClick;
+            this.lvInHouseAcknowledgement.Columns.Add(this.columnHeader1);
+            this.lvInHouseAcknowledgement.Columns.Add(this.columnHeader2);
+            this.lvInHouseAcknowledgement.Columns.Add(this.columnHeader3);
+            this.lvInHouseAcknowledgement.FullRowSelect = true;
+            this.lvInHouseAcknowledgement.Location = new System.Drawing.Point(13, 48);
+            this.lvInHouseAcknowledgement.Name = "lvInHouseAcknowledgement";
+            this.lvInHouseAcknowledgement.Size = new System.Drawing.Size(214, 166);
+            this.lvInHouseAcknowledgement.TabIndex = 1;
+            this.lvInHouseAcknowledgement.View = System.Windows.Forms.View.Details;
+            this.lvInHouseAcknowledgement.ItemActivate += new System.EventHandler(this.lvInHouseAcknowledgement_ItemActivate);
             // 
             // columnHeader1
             // 
@@ -73,14 +73,14 @@
             this.columnHeader3.Text = "Weight";
             this.columnHeader3.Width = 56;
             // 
-            // button1
+            // btnReceiveToWarehouse
             // 
-            this.button1.Location = new System.Drawing.Point(90, 233);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 20);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Receive to Warehouse";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnReceiveToWarehouse.Location = new System.Drawing.Point(77, 233);
+            this.btnReceiveToWarehouse.Name = "btnReceiveToWarehouse";
+            this.btnReceiveToWarehouse.Size = new System.Drawing.Size(150, 20);
+            this.btnReceiveToWarehouse.TabIndex = 3;
+            this.btnReceiveToWarehouse.Text = "Receive to Warehouse";
+            this.btnReceiveToWarehouse.Click += new System.EventHandler(this.btnReceiveToWarehouse_Click);
             // 
             // frmInHouseAcknowledgement
             // 
@@ -89,9 +89,9 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(240, 267);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.InHouselbl);
+            this.Controls.Add(this.btnReceiveToWarehouse);
+            this.Controls.Add(this.lvInHouseAcknowledgement);
+            this.Controls.Add(this.lblInHouseAcknowledgment);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.Name = "frmInHouseAcknowledgement";
             this.Text = "Warehouse Mobile Solution";
@@ -103,11 +103,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label InHouselbl;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label lblInHouseAcknowledgment;
+        private System.Windows.Forms.ListView lvInHouseAcknowledgement;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReceiveToWarehouse;
     }
 }

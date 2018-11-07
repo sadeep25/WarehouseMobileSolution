@@ -28,89 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.movebtn = new System.Windows.Forms.Button();
-            this.bintibinstatuslbl = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lblBinToBinHeader = new System.Windows.Forms.Label();
+            this.btnMove = new System.Windows.Forms.Button();
+            this.lblBinToBinStatus = new System.Windows.Forms.Label();
+            this.lvWebs = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.binfromlbl = new System.Windows.Forms.Label();
-            this.bintolbl = new System.Windows.Forms.Label();
-            this.binscanfromlbl = new System.Windows.Forms.Label();
-            this.binscantolbl = new System.Windows.Forms.Label();
+            this.lblBinFrom = new System.Windows.Forms.Label();
+            this.lblBinTo = new System.Windows.Forms.Label();
+            this.lblBinScanFrom = new System.Windows.Forms.Label();
+            this.lblBinScanTo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lblBinToBinHeader
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(3, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 20);
-            this.label1.Text = "Bin to Bin";
+            this.lblBinToBinHeader.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.lblBinToBinHeader.Location = new System.Drawing.Point(3, 22);
+            this.lblBinToBinHeader.Name = "lblBinToBinHeader";
+            this.lblBinToBinHeader.Size = new System.Drawing.Size(100, 20);
+            this.lblBinToBinHeader.Text = "Bin to Bin";
             // 
-            // movebtn
+            // btnMove
             // 
-            this.movebtn.Enabled = false;
-            this.movebtn.Location = new System.Drawing.Point(55, 206);
-            this.movebtn.Name = "movebtn";
-            this.movebtn.Size = new System.Drawing.Size(125, 27);
-            this.movebtn.TabIndex = 1;
-            this.movebtn.Text = "Move";
-            this.movebtn.Click += new System.EventHandler(this.movebtn_Click);
+            this.btnMove.Enabled = false;
+            this.btnMove.Location = new System.Drawing.Point(55, 206);
+            this.btnMove.Name = "btnMove";
+            this.btnMove.Size = new System.Drawing.Size(125, 27);
+            this.btnMove.TabIndex = 1;
+            this.btnMove.Text = "Move";
+            this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
-            // bintibinstatuslbl
+            // lblBinToBinStatus
             // 
-            this.bintibinstatuslbl.Location = new System.Drawing.Point(3, 236);
-            this.bintibinstatuslbl.Name = "bintibinstatuslbl";
-            this.bintibinstatuslbl.Size = new System.Drawing.Size(234, 20);
-            this.bintibinstatuslbl.Text = "[Scan the bin where webs stored  in]";
-            this.bintibinstatuslbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblBinToBinStatus.Location = new System.Drawing.Point(0, 236);
+            this.lblBinToBinStatus.Name = "lblBinToBinStatus";
+            this.lblBinToBinStatus.Size = new System.Drawing.Size(234, 20);
+            this.lblBinToBinStatus.Text = "[Scan the bin where webs stored  in]";
+            this.lblBinToBinStatus.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // listView1
+            // lvWebs
             // 
-            this.listView1.Columns.Add(this.columnHeader1);
-            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView1.Location = new System.Drawing.Point(41, 99);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(155, 101);
-            this.listView1.TabIndex = 3;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lvWebs.Columns.Add(this.columnHeader1);
+            this.lvWebs.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvWebs.Location = new System.Drawing.Point(41, 99);
+            this.lvWebs.Name = "lvWebs";
+            this.lvWebs.Size = new System.Drawing.Size(155, 101);
+            this.lvWebs.TabIndex = 3;
+            this.lvWebs.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Webs";
             this.columnHeader1.Width = 154;
             // 
-            // binfromlbl
+            // lblBinFrom
             // 
-            this.binfromlbl.Location = new System.Drawing.Point(17, 42);
-            this.binfromlbl.Name = "binfromlbl";
-            this.binfromlbl.Size = new System.Drawing.Size(70, 20);
-            this.binfromlbl.Text = "Bin (from)";
-            this.binfromlbl.Visible = false;
+            this.lblBinFrom.Location = new System.Drawing.Point(17, 42);
+            this.lblBinFrom.Name = "lblBinFrom";
+            this.lblBinFrom.Size = new System.Drawing.Size(70, 20);
+            this.lblBinFrom.Text = "Bin (from)";
+            this.lblBinFrom.Visible = false;
             // 
-            // bintolbl
+            // lblBinTo
             // 
-            this.bintolbl.Location = new System.Drawing.Point(17, 67);
-            this.bintolbl.Name = "bintolbl";
-            this.bintolbl.Size = new System.Drawing.Size(70, 20);
-            this.bintolbl.Text = "Bin (to)";
-            this.bintolbl.Visible = false;
+            this.lblBinTo.Location = new System.Drawing.Point(17, 67);
+            this.lblBinTo.Name = "lblBinTo";
+            this.lblBinTo.Size = new System.Drawing.Size(70, 20);
+            this.lblBinTo.Text = "Bin (to)";
+            this.lblBinTo.Visible = false;
             // 
-            // binscanfromlbl
+            // lblBinScanFrom
             // 
-            this.binscanfromlbl.Location = new System.Drawing.Point(81, 42);
-            this.binscanfromlbl.Name = "binscanfromlbl";
-            this.binscanfromlbl.Size = new System.Drawing.Size(156, 20);
-            this.binscanfromlbl.Text = "label5";
-            this.binscanfromlbl.Visible = false;
+            this.lblBinScanFrom.Location = new System.Drawing.Point(81, 42);
+            this.lblBinScanFrom.Name = "lblBinScanFrom";
+            this.lblBinScanFrom.Size = new System.Drawing.Size(156, 20);
+            this.lblBinScanFrom.Text = "label5";
+            this.lblBinScanFrom.Visible = false;
             // 
-            // binscantolbl
+            // lblBinScanTo
             // 
-            this.binscantolbl.Location = new System.Drawing.Point(81, 67);
-            this.binscantolbl.Name = "binscantolbl";
-            this.binscantolbl.Size = new System.Drawing.Size(156, 20);
-            this.binscantolbl.Text = "label6";
-            this.binscantolbl.Visible = false;
+            this.lblBinScanTo.Location = new System.Drawing.Point(81, 67);
+            this.lblBinScanTo.Name = "lblBinScanTo";
+            this.lblBinScanTo.Size = new System.Drawing.Size(156, 20);
+            this.lblBinScanTo.Text = "label6";
+            this.lblBinScanTo.Visible = false;
             // 
             // frmBinToBin
             // 
@@ -118,31 +118,32 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 267);
-            this.Controls.Add(this.binscantolbl);
-            this.Controls.Add(this.binscanfromlbl);
-            this.Controls.Add(this.bintolbl);
-            this.Controls.Add(this.binfromlbl);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.bintibinstatuslbl);
-            this.Controls.Add(this.movebtn);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblBinScanTo);
+            this.Controls.Add(this.lblBinScanFrom);
+            this.Controls.Add(this.lblBinTo);
+            this.Controls.Add(this.lblBinFrom);
+            this.Controls.Add(this.lvWebs);
+            this.Controls.Add(this.lblBinToBinStatus);
+            this.Controls.Add(this.btnMove);
+            this.Controls.Add(this.lblBinToBinHeader);
             this.Name = "frmBinToBin";
             this.Text = "Warehouse Mobile Solution";
             this.Load += new System.EventHandler(this.frmBinToBin_Load);
+            this.Closing += new System.ComponentModel.CancelEventHandler(this.frmBinToBin_Closing);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button movebtn;
-        private System.Windows.Forms.Label bintibinstatuslbl;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label lblBinToBinHeader;
+        private System.Windows.Forms.Button btnMove;
+        private System.Windows.Forms.Label lblBinToBinStatus;
+        private System.Windows.Forms.ListView lvWebs;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.Label binfromlbl;
-        private System.Windows.Forms.Label bintolbl;
-        private System.Windows.Forms.Label binscanfromlbl;
-        private System.Windows.Forms.Label binscantolbl;
+        private System.Windows.Forms.Label lblBinFrom;
+        private System.Windows.Forms.Label lblBinTo;
+        private System.Windows.Forms.Label lblBinScanFrom;
+        private System.Windows.Forms.Label lblBinScanTo;
     }
 }

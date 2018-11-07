@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvWebs = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.scanBinLbl = new System.Windows.Forms.Label();
-            this.binFromLbl = new System.Windows.Forms.Label();
+            this.btnWebsDialogDone = new System.Windows.Forms.Button();
+            this.lblScanBin = new System.Windows.Forms.Label();
+            this.lblBinFrom = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listView1
+            // lvWebs
             // 
-            this.listView1.CheckBoxes = true;
-            this.listView1.Columns.Add(this.columnHeader1);
-            this.listView1.FullRowSelect = true;
+            this.lvWebs.CheckBoxes = true;
+            this.lvWebs.Columns.Add(this.columnHeader1);
+            this.lvWebs.FullRowSelect = true;
             listViewItem1.Text = "test";
-            this.listView1.Items.Add(listViewItem1);
-            this.listView1.Location = new System.Drawing.Point(18, 41);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(174, 136);
-            this.listView1.TabIndex = 0;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lvWebs.Items.Add(listViewItem1);
+            this.lvWebs.Location = new System.Drawing.Point(18, 41);
+            this.lvWebs.Name = "lvWebs";
+            this.lvWebs.Size = new System.Drawing.Size(174, 136);
+            this.lvWebs.TabIndex = 0;
+            this.lvWebs.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -58,37 +58,37 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.scanBinLbl);
-            this.panel1.Controls.Add(this.binFromLbl);
-            this.panel1.Controls.Add(this.listView1);
+            this.panel1.Controls.Add(this.btnWebsDialogDone);
+            this.panel1.Controls.Add(this.lblScanBin);
+            this.panel1.Controls.Add(this.lblBinFrom);
+            this.panel1.Controls.Add(this.lvWebs);
             this.panel1.Location = new System.Drawing.Point(11, 18);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(212, 229);
             // 
-            // button1
+            // btnWebsDialogDone
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(67, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 20);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Done";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnWebsDialogDone.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnWebsDialogDone.Location = new System.Drawing.Point(67, 194);
+            this.btnWebsDialogDone.Name = "btnWebsDialogDone";
+            this.btnWebsDialogDone.Size = new System.Drawing.Size(72, 20);
+            this.btnWebsDialogDone.TabIndex = 3;
+            this.btnWebsDialogDone.Text = "Done";
+            this.btnWebsDialogDone.Click += new System.EventHandler(this.btnWebsDialogDone_Click);
             // 
-            // scanBinLbl
+            // lblScanBin
             // 
-            this.scanBinLbl.Location = new System.Drawing.Point(91, 8);
-            this.scanBinLbl.Name = "scanBinLbl";
-            this.scanBinLbl.Size = new System.Drawing.Size(96, 20);
-            this.scanBinLbl.Text = "#222222";
+            this.lblScanBin.Location = new System.Drawing.Point(91, 8);
+            this.lblScanBin.Name = "lblScanBin";
+            this.lblScanBin.Size = new System.Drawing.Size(96, 20);
+            this.lblScanBin.Text = "#222222";
             // 
-            // binFromLbl
+            // lblBinFrom
             // 
-            this.binFromLbl.Location = new System.Drawing.Point(18, 8);
-            this.binFromLbl.Name = "binFromLbl";
-            this.binFromLbl.Size = new System.Drawing.Size(67, 20);
-            this.binFromLbl.Text = "Bin (from)";
+            this.lblBinFrom.Location = new System.Drawing.Point(18, 8);
+            this.lblBinFrom.Name = "lblBinFrom";
+            this.lblBinFrom.Size = new System.Drawing.Size(67, 20);
+            this.lblBinFrom.Text = "Bin (from)";
             // 
             // frmWebsDialog
             // 
@@ -109,11 +109,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvWebs;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label binFromLbl;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label scanBinLbl;
+        private System.Windows.Forms.Label lblBinFrom;
+        private System.Windows.Forms.Button btnWebsDialogDone;
+        private System.Windows.Forms.Label lblScanBin;
     }
 }

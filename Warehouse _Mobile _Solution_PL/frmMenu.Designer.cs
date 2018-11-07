@@ -30,76 +30,76 @@
         private void InitializeComponent()
         {
             this.mainMenu2 = new System.Windows.Forms.MainMenu();
-            this.MenuLabel = new System.Windows.Forms.Label();
-            this.LogOutbtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.PutIntoBinbtn = new System.Windows.Forms.Button();
-            this.BinToBinbtn = new System.Windows.Forms.Button();
-            this.IssueTheWebsbtn = new System.Windows.Forms.Button();
-            this.HandoverToFinishingbtn = new System.Windows.Forms.Button();
+            this.lblMenuHeader = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnInHouseAcknowledgement = new System.Windows.Forms.Button();
+            this.btnPutIntoBin = new System.Windows.Forms.Button();
+            this.btnBinToBin = new System.Windows.Forms.Button();
+            this.btnIssueTheWebs = new System.Windows.Forms.Button();
+            this.btnHandoverToFinishing = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // MenuLabel
+            // lblMenuHeader
             // 
-            this.MenuLabel.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
-            this.MenuLabel.Location = new System.Drawing.Point(17, 34);
-            this.MenuLabel.Name = "MenuLabel";
-            this.MenuLabel.Size = new System.Drawing.Size(61, 20);
-            this.MenuLabel.Text = "Menu";
+            this.lblMenuHeader.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.lblMenuHeader.Location = new System.Drawing.Point(17, 34);
+            this.lblMenuHeader.Name = "lblMenuHeader";
+            this.lblMenuHeader.Size = new System.Drawing.Size(61, 20);
+            this.lblMenuHeader.Text = "Menu";
             // 
-            // LogOutbtn
+            // btnLogOut
             // 
-            this.LogOutbtn.Location = new System.Drawing.Point(148, 34);
-            this.LogOutbtn.Name = "LogOutbtn";
-            this.LogOutbtn.Size = new System.Drawing.Size(72, 20);
-            this.LogOutbtn.TabIndex = 1;
-            this.LogOutbtn.Text = "Log Out";
-            this.LogOutbtn.Click += new System.EventHandler(this.LogOutbtn_Click);
+            this.btnLogOut.Location = new System.Drawing.Point(148, 34);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(72, 20);
+            this.btnLogOut.TabIndex = 1;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // button1
+            // btnInHouseAcknowledgement
             // 
-            this.button1.Location = new System.Drawing.Point(17, 74);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "In-House Acknowledgement";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnInHouseAcknowledgement.Location = new System.Drawing.Point(17, 74);
+            this.btnInHouseAcknowledgement.Name = "btnInHouseAcknowledgement";
+            this.btnInHouseAcknowledgement.Size = new System.Drawing.Size(203, 29);
+            this.btnInHouseAcknowledgement.TabIndex = 2;
+            this.btnInHouseAcknowledgement.Text = "In-House Acknowledgement";
+            this.btnInHouseAcknowledgement.Click += new System.EventHandler(this.btnInHouseAcknowledgement_Click);
             // 
-            // PutIntoBinbtn
+            // btnPutIntoBin
             // 
-            this.PutIntoBinbtn.Location = new System.Drawing.Point(17, 109);
-            this.PutIntoBinbtn.Name = "PutIntoBinbtn";
-            this.PutIntoBinbtn.Size = new System.Drawing.Size(203, 29);
-            this.PutIntoBinbtn.TabIndex = 3;
-            this.PutIntoBinbtn.Text = "Put into Bin";
-            this.PutIntoBinbtn.Click += new System.EventHandler(this.PutIntoBinbtn_Click);
+            this.btnPutIntoBin.Location = new System.Drawing.Point(17, 109);
+            this.btnPutIntoBin.Name = "btnPutIntoBin";
+            this.btnPutIntoBin.Size = new System.Drawing.Size(203, 29);
+            this.btnPutIntoBin.TabIndex = 3;
+            this.btnPutIntoBin.Text = "Put into Bin";
+            this.btnPutIntoBin.Click += new System.EventHandler(this.btnPutIntoBin_Click);
             // 
-            // BinToBinbtn
+            // btnBinToBin
             // 
-            this.BinToBinbtn.Location = new System.Drawing.Point(17, 145);
-            this.BinToBinbtn.Name = "BinToBinbtn";
-            this.BinToBinbtn.Size = new System.Drawing.Size(203, 29);
-            this.BinToBinbtn.TabIndex = 4;
-            this.BinToBinbtn.Text = "Bin to Bin";
-            this.BinToBinbtn.Click += new System.EventHandler(this.BinToBinbtn_Click);
+            this.btnBinToBin.Location = new System.Drawing.Point(17, 145);
+            this.btnBinToBin.Name = "btnBinToBin";
+            this.btnBinToBin.Size = new System.Drawing.Size(203, 29);
+            this.btnBinToBin.TabIndex = 4;
+            this.btnBinToBin.Text = "Bin to Bin";
+            this.btnBinToBin.Click += new System.EventHandler(this.btnBinToBin_Click);
             // 
-            // IssueTheWebsbtn
+            // btnIssueTheWebs
             // 
-            this.IssueTheWebsbtn.Location = new System.Drawing.Point(17, 181);
-            this.IssueTheWebsbtn.Name = "IssueTheWebsbtn";
-            this.IssueTheWebsbtn.Size = new System.Drawing.Size(203, 29);
-            this.IssueTheWebsbtn.TabIndex = 5;
-            this.IssueTheWebsbtn.Text = "Issue the Webs";
-            this.IssueTheWebsbtn.Click += new System.EventHandler(this.IssueTheWebsbtn_Click);
+            this.btnIssueTheWebs.Location = new System.Drawing.Point(17, 181);
+            this.btnIssueTheWebs.Name = "btnIssueTheWebs";
+            this.btnIssueTheWebs.Size = new System.Drawing.Size(203, 29);
+            this.btnIssueTheWebs.TabIndex = 5;
+            this.btnIssueTheWebs.Text = "Issue the Webs";
+            this.btnIssueTheWebs.Click += new System.EventHandler(this.btnIssueTheWebs_Click);
             // 
-            // HandoverToFinishingbtn
+            // btnHandoverToFinishing
             // 
-            this.HandoverToFinishingbtn.Location = new System.Drawing.Point(17, 217);
-            this.HandoverToFinishingbtn.Name = "HandoverToFinishingbtn";
-            this.HandoverToFinishingbtn.Size = new System.Drawing.Size(203, 29);
-            this.HandoverToFinishingbtn.TabIndex = 6;
-            this.HandoverToFinishingbtn.Text = "Handover to Finishing";
-            this.HandoverToFinishingbtn.Click += new System.EventHandler(this.HandoverToFinishingbtn_Click);
+            this.btnHandoverToFinishing.Location = new System.Drawing.Point(17, 217);
+            this.btnHandoverToFinishing.Name = "btnHandoverToFinishing";
+            this.btnHandoverToFinishing.Size = new System.Drawing.Size(203, 29);
+            this.btnHandoverToFinishing.TabIndex = 6;
+            this.btnHandoverToFinishing.Text = "Handover to Finishing";
+            this.btnHandoverToFinishing.Click += new System.EventHandler(this.btnHandoverToFinishing_Click);
             // 
             // frmMenu
             // 
@@ -107,13 +107,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(240, 267);
-            this.Controls.Add(this.HandoverToFinishingbtn);
-            this.Controls.Add(this.IssueTheWebsbtn);
-            this.Controls.Add(this.BinToBinbtn);
-            this.Controls.Add(this.PutIntoBinbtn);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.LogOutbtn);
-            this.Controls.Add(this.MenuLabel);
+            this.Controls.Add(this.btnHandoverToFinishing);
+            this.Controls.Add(this.btnIssueTheWebs);
+            this.Controls.Add(this.btnBinToBin);
+            this.Controls.Add(this.btnPutIntoBin);
+            this.Controls.Add(this.btnInHouseAcknowledgement);
+            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.lblMenuHeader);
             this.Menu = this.mainMenu2;
             this.Name = "frmMenu";
             this.Text = "Warehouse Mobile Solution";
@@ -125,13 +125,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label MenuLabel;
-        private System.Windows.Forms.Button LogOutbtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button PutIntoBinbtn;
-        private System.Windows.Forms.Button BinToBinbtn;
-        private System.Windows.Forms.Button IssueTheWebsbtn;
-        private System.Windows.Forms.Button HandoverToFinishingbtn;
+        private System.Windows.Forms.Label lblMenuHeader;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnInHouseAcknowledgement;
+        private System.Windows.Forms.Button btnPutIntoBin;
+        private System.Windows.Forms.Button btnBinToBin;
+        private System.Windows.Forms.Button btnIssueTheWebs;
+        private System.Windows.Forms.Button btnHandoverToFinishing;
 
     }
 }

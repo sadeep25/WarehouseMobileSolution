@@ -28,6 +28,17 @@ namespace Warehouse__Mobile__Solution_PL
             InitializeComponent();
         }
 
+        private void frmBinToBin_Load(object sender, EventArgs e)
+        {
+            LocadScanner();
+        }
+
+        private void btnMove_Click(object sender, EventArgs e)
+        {
+            AutoClosingMessageBox.Show("Successfully Saved", "Caption", 1000);
+            this.UnloadScanner();
+            this.RefToMenu.Show();
+        }
 
         private void myReader_ReadNotify(object Sender, EventArgs e)
         {
@@ -75,18 +86,19 @@ namespace Warehouse__Mobile__Solution_PL
             {
                 using (var form = new frmWebsDialog())
                 {
-                    form.binNumber = TheReaderData.Text;
-                    binscanfromlbl.Text = TheReaderData.Text;
-                    binfromlbl.Visible = true;
-                    binscanfromlbl.Visible = true;
+                    form.BinNumber = TheReaderData.Text;
+                    lblBinScanFrom.Text = TheReaderData.Text;
+                    lblBinFrom.Visible = true;
+                    lblBinScanFrom.Visible = true;
                     var result = form.ShowDialog();
                     if (result == DialogResult.OK)
                     {
-                        selectedWebsToMove = form.ReturnValue1;
-                        loadWebList(selectedWebsToMove);
+                        selectedWebsToMove = form.SelectedWebs;
+                        LoadWebList(selectedWebsToMove);
                         isBinFromScaned = true;
-                        bintibinstatuslbl.Text = "[Scan the bin to move selected webs]";
-                        this.barcodeScanner.StartRead(true);
+                        lblBinToBinStatus.Text = "[Scan the bin to move selected webs]";
+                        AutoClosingMessageBox.Show("Successfully Saved", "Caption", 1000);
+                        this.barcodeScanner.StartRead(false);
                     }
 
                 }
@@ -94,19 +106,16 @@ namespace Warehouse__Mobile__Solution_PL
             else
             {
                 binTo = TheReaderData.Text;
-                bintolbl.Visible = true;
-                binscantolbl.Text = TheReaderData.Text;
-                binscantolbl.Visible = true;
-                bintibinstatuslbl.Text = "[Confirm action]";
-                barcodeScanner.DetachReadNotify();
-                barcodeScanner.DetachStatusNotify();
-                barcodeScanner.TermReader();
-                movebtn.Enabled = true;
+                lblBinTo.Visible = true;
+                lblBinScanTo.Text = TheReaderData.Text;
+                lblBinScanTo.Visible = true;
+                lblBinToBinStatus.Text = "[Confirm action]";
+                btnMove.Enabled = true;
             }
 
         }
 
-        private void locadScanner()
+        private void LocadScanner()
         {
             // Initialize the ScanSampleAPI reference.
             this.barcodeScanner = new BarcodeScanner();
@@ -128,27 +137,30 @@ namespace Warehouse__Mobile__Solution_PL
                 barcodeScanner.AttachReadNotify(myReadNotifyHandler);
                 //this.myStatusNotifyHandler = new EventHandler(myReader_StatusNotify);
                 //barcodeScanner.AttachStatusNotify(myStatusNotifyHandler);
-                this.barcodeScanner.StartRead(true);
+                this.barcodeScanner.StartRead(false);
             }
         }
-
-        private void movebtn_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void loadWebList(List<string> selectedWebs)
+     
+        private void LoadWebList(List<string> selectedWebs)
         {
             foreach (var item in selectedWebs)
             {
                 ListViewItem lv = new ListViewItem(item);
-                listView1.Items.Add(lv);
+                lvWebs.Items.Add(lv);
             }
         }
 
-        private void frmBinToBin_Load(object sender, EventArgs e)
+        private void UnloadScanner()
         {
-            locadScanner();
+            barcodeScanner.DetachReadNotify();
+            barcodeScanner.DetachStatusNotify();
+            barcodeScanner.TermReader();
         }
 
+        private void frmBinToBin_Closing(object sender, CancelEventArgs e)
+        {
+            this.UnloadScanner();
+            this.RefToMenu.Show();
+        }
     }
 }

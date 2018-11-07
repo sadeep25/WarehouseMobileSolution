@@ -89,7 +89,7 @@ namespace Warehouse__Mobile__Solution_PL
             this.Hide();
         }
 
-        public void LoadScanner()
+        private void LoadScanner()
         {
             // Initialize the ScanSampleAPI reference.
             this.barcodeScanner = new BarcodeScanner();

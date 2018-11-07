@@ -17,15 +17,14 @@ namespace Warehouse__Mobile__Solution_PL
 
         // The flag to track whether the reader has been initialized or not.
         private bool isReaderInitiated = false;
-        private bool isPOScanned = false;
+        private bool isProductionOrderScanned = false;
         public Form RefToMenu { get; set; }
         public string userBarcode { get; set; }
-
         public frmHandOver()
         {
             InitializeComponent();
         }
-        private void locadScanner()
+        private void LoadScanner()
         {
             // Initialize the ScanSampleAPI reference.
             this.barcodeScanner = new BarcodeScanner();
@@ -85,26 +84,24 @@ namespace Warehouse__Mobile__Solution_PL
         private void HandleData(Symbol.Barcode.ReaderData TheReaderData)
         {
             //write handling logic//
-            if (!isPOScanned)
+            if (!isProductionOrderScanned)
             {
 
-                POScannedLbl.Text = TheReaderData.Text;
-                isPOScanned = true;
-                this.loadWebs();
+                lblProductionOrderScanned.Text = TheReaderData.Text;
+                isProductionOrderScanned = true;
+                this.LoadWebs();
                 this.barcodeScanner.StartRead(false);
             }
             else
             {
-                DeliveredToScannedLbl.Text = TheReaderData.Text;
+                lblDeliveredToScanned.Text = TheReaderData.Text;
                 this.UnloadScanner();
-                this.barcodeScanner.StartRead(false);
             }
         }
-
         private void frmHandOver_Load(object sender, EventArgs e)
         {
-            this.locadScanner();
-            BroughtByScannedLbl.Text = userBarcode;
+            this.LoadScanner();
+            lblBroughtByScanned.Text = userBarcode;
         }
         private void UnloadScanner()
         {
@@ -112,29 +109,39 @@ namespace Warehouse__Mobile__Solution_PL
             barcodeScanner.DetachStatusNotify();
             barcodeScanner.TermReader();
         }
-        private void loadWebs()
+        private void LoadWebs()
         {
             ListViewItem l1 = new ListViewItem("22222222");
             l1.SubItems.Add("#123");
             l1.SubItems.Add("123.45");
-            listView1.Items.Add(l1);
+            lvWebs.Items.Add(l1);
             ListViewItem l2 = new ListViewItem("33333333");
             l2.SubItems.Add("#124");
             l2.SubItems.Add("124.45");
-            listView1.Items.Add(l2);
+            lvWebs.Items.Add(l2);
             ListViewItem l3 = new ListViewItem("4792066523581");
             l3.SubItems.Add("#125");
             l3.SubItems.Add("125.45");
-            listView1.Items.Add(l3);
+            lvWebs.Items.Add(l3);
             ListViewItem l4 = new ListViewItem("55555555");
             l4.SubItems.Add("#126");
             l4.SubItems.Add("126.45");
-            listView1.Items.Add(l4);
+            lvWebs.Items.Add(l4);
             ListViewItem l5 = new ListViewItem("66666666");
             l5.SubItems.Add("#127");
             l5.SubItems.Add("127.45");
-            listView1.Items.Add(l5);
+            lvWebs.Items.Add(l5);
 
+        }
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+            AutoClosingMessageBox.Show("Successfully Transfered Webs", "Caption", 1000);
+            this.RefToMenu.Show();
+            this.Close();
+        }
+        private void frmHandOver_Closing(object sender, CancelEventArgs e)
+        {
+            this.RefToMenu.Show();
         }
     }
 }

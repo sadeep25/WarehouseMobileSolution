@@ -26,7 +26,7 @@ namespace Warehouse__Mobile__Solution_PL
             InitializeComponent();
         }
 
-        private void locadScanner()
+        private void LocalScanner()
         {
             // Initialize the ScanSampleAPI reference.
             this.barcodeScanner = new BarcodeScanner();
@@ -89,56 +89,56 @@ namespace Warehouse__Mobile__Solution_PL
             if (!isProductionOrderScaned)
             {
 
-                issueWebProductionOrderScanLbl.Text = TheReaderData.Text;
+                lblIssueWebProductionOrderScan.Text = TheReaderData.Text;
                 isProductionOrderScaned = true;
-                this.loadWebs();
+                this.LoadWebs();
                 this.barcodeScanner.StartRead(false);
             }
             else
             {
-                this.issueWebs(TheReaderData.Text);
+                this.IssueWebs(TheReaderData.Text);
                 this.barcodeScanner.StartRead(false);
 
             }
         }
-        private void loadWebs()
+        private void LoadWebs()
         {
             ListViewItem l1 = new ListViewItem("22222222");
             l1.SubItems.Add("#123");
             l1.SubItems.Add("123.45");
-            listView1.Items.Add(l1);
+            lvWebs.Items.Add(l1);
             ListViewItem l2 = new ListViewItem("33333333");
             l2.SubItems.Add("#124");
             l2.SubItems.Add("124.45");
-            listView1.Items.Add(l2);
+            lvWebs.Items.Add(l2);
             ListViewItem l3 = new ListViewItem("4792066523581");
             l3.SubItems.Add("#125");
             l3.SubItems.Add("125.45");
-            listView1.Items.Add(l3);
+            lvWebs.Items.Add(l3);
             ListViewItem l4 = new ListViewItem("55555555");
             l4.SubItems.Add("#126");
             l4.SubItems.Add("126.45");
-            listView1.Items.Add(l4);
+            lvWebs.Items.Add(l4);
             ListViewItem l5 = new ListViewItem("66666666");
             l5.SubItems.Add("#127");
             l5.SubItems.Add("127.45");
-            listView1.Items.Add(l5);
+            lvWebs.Items.Add(l5);
 
         }
-        private void issueWebs(string webNumber)
+        private void IssueWebs(string webNumber)
         {
-            for (int i = listView1.Items.Count - 1; i >= 0; i--)
+            for (int i = lvWebs.Items.Count - 1; i >= 0; i--)
             {
-                if (listView1.Items[i].SubItems[0].Text == webNumber)
+                if (lvWebs.Items[i].SubItems[0].Text == webNumber)
                 {
-                    if (listView1.Items[i].Checked)
+                    if (lvWebs.Items[i].Checked)
                     {
                         var confirmResult = MessageBox.Show("This Web Is Already Scanned", "confirm", MessageBoxButtons.OK, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
                         isInvalid = false;
                     }
                     else
                     {
-                        listView1.Items[i].Checked = true;
+                        lvWebs.Items[i].Checked = true;
                         isInvalid = false;
                         AutoClosingMessageBox.Show("Success", "Caption", 1000);
                     }
@@ -155,7 +155,7 @@ namespace Warehouse__Mobile__Solution_PL
         }
         private void frmIssueWebs_Load(object sender, EventArgs e)
         {
-            this.locadScanner();
+            this.LocalScanner();
         }
         private void UnloadScanner()
         {
@@ -163,9 +163,19 @@ namespace Warehouse__Mobile__Solution_PL
             barcodeScanner.DetachStatusNotify();
             barcodeScanner.TermReader();
         }
-        private void issueWebsIssueBtn_Click(object sender, EventArgs e)
+        private void btnIssueWebsIssue_Click(object sender, EventArgs e)
+        {
+            AutoClosingMessageBox.Show("Successfully Issued Webs", "Caption", 1000);
+            this.UnloadScanner();
+            this.RefToMenu.Show();
+            this.Close();
+        }
+
+        private void frmIssueWebs_Closing(object sender, CancelEventArgs e)
         {
             this.UnloadScanner();
+            this.RefToMenu.Show();
+            this.Close();
         }
     }
 }

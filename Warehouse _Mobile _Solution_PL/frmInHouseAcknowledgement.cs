@@ -36,26 +36,26 @@ namespace Warehouse__Mobile__Solution_PL
             this.Close();
         }
 
-        private void listView1_ItemActivate(object sender, EventArgs e)
+        private void lvInHouseAcknowledgement_ItemActivate(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show("Are you sure to delete this item ??", "Confirm Delete!!", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
             if (confirmResult == DialogResult.Yes)
             {
-                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                for (int i = lvInHouseAcknowledgement.Items.Count - 1; i >= 0; i--)
                 {
-                    if (listView1.Items[i].Selected)
+                    if (lvInHouseAcknowledgement.Items[i].Selected)
                     {
-                        listView1.Items.Remove(listView1.Items[i]);
+                        lvInHouseAcknowledgement.Items.Remove(lvInHouseAcknowledgement.Items[i]);
                     }
                 }
             }
             else
             {
-                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                for (int i = lvInHouseAcknowledgement.Items.Count - 1; i >= 0; i--)
                 {
-                    if (listView1.Items[i].Selected)
+                    if (lvInHouseAcknowledgement.Items[i].Selected)
                     {
-                        listView1.Items[i].Selected = false;
+                        lvInHouseAcknowledgement.Items[i].Selected = false;
                     }
                 }
             }
@@ -110,10 +110,10 @@ namespace Warehouse__Mobile__Solution_PL
             this.barcodeScanner.StartRead(false);
             lv.SubItems.Add("Material");
             lv.SubItems.Add("Weight");
-            listView1.Items.Add(lv);
+            lvInHouseAcknowledgement.Items.Add(lv);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnReceiveToWarehouse_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Transfer Succwssfull");
             barcodeScanner.DetachReadNotify();
