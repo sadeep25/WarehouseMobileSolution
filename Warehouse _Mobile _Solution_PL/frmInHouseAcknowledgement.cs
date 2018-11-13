@@ -27,18 +27,40 @@ namespace Warehouse__Mobile__Solution_PL
 
         private void frmInHouseAcknowledgement_Load(object sender, EventArgs e)
         {
-            locadScanner();
+            LoadScanner();
         }
 
         private void frmInHouseAcknowledgement_Closing(object sender, CancelEventArgs e)
         {
-            RefToMenu.Show();
-            this.Close();
+
+            if (lvInHouseAcknowledgement.Items.Count > 0)
+            {
+                frmMessageBox form = new frmMessageBox(MessageTypes.Warning, "Are you sure you want to close this transaction", "Warnning");
+                var result = form.ShowDialog();
+                if (result == DialogResult.Yes)
+                {
+                    this.UnloadScanner();
+                    this.RefToMenu.Show();
+                    this.Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                this.UnloadScanner();
+                RefToMenu.Show();
+                this.Close();
+            }
         }
 
         private void lvInHouseAcknowledgement_ItemActivate(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Are you sure to delete this item ??", "Confirm Delete!!", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
+            // var confirmResult = MessageBox.Show("Are you sure to delete this item ??", "Confirm Delete!!", MessageBoxButtons.YesNo, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
+            frmMessageBox form = new frmMessageBox(MessageTypes.Warning, "Are you sure to delete this item ?", "Warnnig!");
+            var confirmResult = form.ShowDialog();
             if (confirmResult == DialogResult.Yes)
             {
                 for (int i = lvInHouseAcknowledgement.Items.Count - 1; i >= 0; i--)
@@ -105,25 +127,52 @@ namespace Warehouse__Mobile__Solution_PL
         private void HandleData(Symbol.Barcode.ReaderData TheReaderData)
         {
             //write handling logic//
-            var Text = TheReaderData.Text;
-            ListViewItem lv = new ListViewItem(Text);
-            this.barcodeScanner.StartRead(false);
-            lv.SubItems.Add("Material");
-            lv.SubItems.Add("Weight");
-            lvInHouseAcknowledgement.Items.Add(lv);
+            if (this.IsDuplicate(TheReaderData.Text))
+            {
+                frmMessageBox form = new frmMessageBox(MessageTypes.Error, "This web is already scanned", "Duplicate");
+                form.ShowDialog();
+                this.barcodeScanner.StartRead(false);
+            }
+            else
+            {
+                if ("4792132408859" == TheReaderData.Text)
+                {
+                    //error barcode
+                    frmMessageBox form = new frmMessageBox(MessageTypes.Error, "This is not a valid web", "Invalid Web");
+                    form.ShowDialog();
+                    this.barcodeScanner.StartRead(false);
+                }
+                else
+                {
+                    var Text = TheReaderData.Text;
+                    ListViewItem lv = new ListViewItem(Text);
+                    this.barcodeScanner.StartRead(false);
+                    lv.SubItems.Add("Material");
+                    lv.SubItems.Add("Weight");
+                    lvInHouseAcknowledgement.Items.Add(lv);
+                }
+            }
         }
 
         private void btnReceiveToWarehouse_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Transfer Succwssfull");
-            barcodeScanner.DetachReadNotify();
-            barcodeScanner.DetachStatusNotify();
-            barcodeScanner.TermReader();
-            RefToMenu.Show();
-            this.Close();
+            if (lvInHouseAcknowledgement.Items.Count > 0)
+            {
+                frmMessageBox form = new frmMessageBox(MessageTypes.Success, "Successfully transfered", "Confirmation");
+                form.ShowDialog();
+                this.UnloadScanner();
+                RefToMenu.Show();
+                this.Close();
+            }
+            else
+            {
+                frmMessageBox form = new frmMessageBox(MessageTypes.Info, "Please Scan webs to receive", "Info");
+                form.ShowDialog();
+            }
+
         }
 
-        private void locadScanner()
+        private void LoadScanner()
         {
             // Initialize the ScanSampleAPI reference.
             this.barcodeScanner = new BarcodeScanner();
@@ -147,6 +196,25 @@ namespace Warehouse__Mobile__Solution_PL
                 //barcodeScanner.AttachStatusNotify(myStatusNotifyHandler);
                 this.barcodeScanner.StartRead(true);
             }
+        }
+
+        private bool IsDuplicate(string barcode)
+        {
+            for (int i = lvInHouseAcknowledgement.Items.Count - 1; i >= 0; i--)
+            {
+                if (lvInHouseAcknowledgement.Items[i].Text == barcode)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void UnloadScanner()
+        {
+            barcodeScanner.DetachReadNotify();
+            barcodeScanner.DetachStatusNotify();
+            barcodeScanner.TermReader();
         }
     }
 }

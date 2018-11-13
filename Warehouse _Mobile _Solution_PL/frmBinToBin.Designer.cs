@@ -101,7 +101,6 @@
             this.lblBinScanFrom.Location = new System.Drawing.Point(81, 42);
             this.lblBinScanFrom.Name = "lblBinScanFrom";
             this.lblBinScanFrom.Size = new System.Drawing.Size(156, 20);
-            this.lblBinScanFrom.Text = "label5";
             this.lblBinScanFrom.Visible = false;
             // 
             // lblBinScanTo
@@ -109,7 +108,6 @@
             this.lblBinScanTo.Location = new System.Drawing.Point(81, 67);
             this.lblBinScanTo.Name = "lblBinScanTo";
             this.lblBinScanTo.Size = new System.Drawing.Size(156, 20);
-            this.lblBinScanTo.Text = "label6";
             this.lblBinScanTo.Visible = false;
             // 
             // frmBinToBin

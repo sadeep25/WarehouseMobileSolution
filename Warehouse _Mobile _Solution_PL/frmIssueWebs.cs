@@ -19,7 +19,10 @@ namespace Warehouse__Mobile__Solution_PL
         private bool isReaderInitiated = false;
         private bool isProductionOrderScaned = false;
         private bool isInvalid = true;
+        private bool isTransactionComplete = false;
+        private List<string> selectedWebList = new List<string>();
         public Form RefToMenu { get; set; }
+
 
         public frmIssueWebs()
         {
@@ -89,10 +92,19 @@ namespace Warehouse__Mobile__Solution_PL
             if (!isProductionOrderScaned)
             {
 
-                lblIssueWebProductionOrderScan.Text = TheReaderData.Text;
-                isProductionOrderScaned = true;
-                this.LoadWebs();
-                this.barcodeScanner.StartRead(false);
+                if ("4792132408859" == TheReaderData.Text)
+                {
+                    frmMessageBox form = new frmMessageBox(MessageTypes.Error, "Invalid production order, Please try again", "Invalid");
+                    form.ShowDialog();
+                    this.barcodeScanner.StartRead(false);
+                }
+                else
+                {
+                    lblIssueWebProductionOrderScan.Text = TheReaderData.Text;
+                    isProductionOrderScaned = true;
+                    this.LoadWebs();
+                    this.barcodeScanner.StartRead(false);
+                }
             }
             else
             {
@@ -115,7 +127,7 @@ namespace Warehouse__Mobile__Solution_PL
             l3.SubItems.Add("#125");
             l3.SubItems.Add("125.45");
             lvWebs.Items.Add(l3);
-            ListViewItem l4 = new ListViewItem("55555555");
+            ListViewItem l4 = new ListViewItem("4792236002229");
             l4.SubItems.Add("#126");
             l4.SubItems.Add("126.45");
             lvWebs.Items.Add(l4);
@@ -133,20 +145,28 @@ namespace Warehouse__Mobile__Solution_PL
                 {
                     if (lvWebs.Items[i].Checked)
                     {
-                        var confirmResult = MessageBox.Show("This Web Is Already Scanned", "confirm", MessageBoxButtons.OK, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
+                        //var confirmResult = MessageBox.Show("This Web Is Already Scanned", "confirm", MessageBoxButtons.OK, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
+                        frmMessageBox form = new frmMessageBox(MessageTypes.Error, "This Web Is Already Scanned", "Already Scanned");
+                        form.ShowDialog();
                         isInvalid = false;
                     }
                     else
                     {
                         lvWebs.Items[i].Checked = true;
                         isInvalid = false;
-                        AutoClosingMessageBox.Show("Success", "Caption", 1000);
+                        if (btnIssueWebsIssue.Enabled == false)
+                        {
+                            btnIssueWebsIssue.Enabled = true;
+                        }
+                        AutoClosingMessageBox.Show("Successfully Scanned", "Success", 1000, MessageTypes.Success);
                     }
                 }
             }
             if (isInvalid)
             {
-                var confirmResult = MessageBox.Show("Invalid Web","Invalid", MessageBoxButtons.OK, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
+                //var confirmResult = MessageBox.Show("Invalid Web","Invalid", MessageBoxButtons.OK, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
+                frmMessageBox form = new frmMessageBox(MessageTypes.Error, "Invalid Web", "Invalid");
+                form.ShowDialog();
             }
             else
             {
@@ -165,17 +185,57 @@ namespace Warehouse__Mobile__Solution_PL
         }
         private void btnIssueWebsIssue_Click(object sender, EventArgs e)
         {
-            AutoClosingMessageBox.Show("Successfully Issued Webs", "Caption", 1000);
-            this.UnloadScanner();
-            this.RefToMenu.Show();
-            this.Close();
+            var result = this.GetSelectedWebs();
+            if (result.Count > 0)
+            {
+                AutoClosingMessageBox.Show("Successfully Issued Webs", "Caption", 1000, MessageTypes.Success);
+
+                this.UnloadScanner();
+                this.RefToMenu.Show();
+                this.Close();
+            }
+            else
+            {
+                frmMessageBox form = new frmMessageBox(MessageTypes.Error, "Please Select webs to issue", "Error");
+                form.ShowDialog();
+            }
+
         }
 
         private void frmIssueWebs_Closing(object sender, CancelEventArgs e)
         {
-            this.UnloadScanner();
-            this.RefToMenu.Show();
-            this.Close();
+            
+            if (isTransactionComplete)
+            {
+                frmMessageBox form = new frmMessageBox(MessageTypes.Warning, "Are you sure you want to close this transaction", "Warnning");
+                var dialogResult = form.ShowDialog();
+                if (dialogResult == DialogResult.Yes)
+                {
+                    this.UnloadScanner();
+                    this.RefToMenu.Show();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                this.UnloadScanner();
+                this.RefToMenu.Show();
+            }
+        }
+
+        private List<string> GetSelectedWebs()
+        {
+            for (int i = lvWebs.Items.Count - 1; i >= 0; i--)
+            {
+                if (lvWebs.Items[i].Checked)
+                {
+                    selectedWebList.Add(lvWebs.Items[i].Text);
+                }
+            }
+            return selectedWebList;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Warehouse__Mobile__Solution_PL
         // The flag to track whether the reader has been initialized or not.
         private bool isReaderInitiated = false;
         private bool isBinFromScaned = false;
-        private List<string> selectedWebsToMove = null;
+        private List<string> selectedWebsToMove = new List<string>();
         public Form RefToMenu { get; set; }
         private string binTo = "";
 
@@ -35,7 +35,7 @@ namespace Warehouse__Mobile__Solution_PL
 
         private void btnMove_Click(object sender, EventArgs e)
         {
-            AutoClosingMessageBox.Show("Successfully Saved", "Caption", 1000);
+            AutoClosingMessageBox.Show("Successfully Saved", "Caption", 1000, MessageTypes.Success);
             this.UnloadScanner();
             this.RefToMenu.Show();
         }
@@ -82,38 +82,83 @@ namespace Warehouse__Mobile__Solution_PL
         private void HandleData(Symbol.Barcode.ReaderData TheReaderData)
         {
             //write handling logic//
-            if (!isBinFromScaned)
+            if (selectedWebsToMove.Count == 0 && isBinFromScaned == true)
             {
+                frmMessageBox formInfo = new frmMessageBox(MessageTypes.Info, "Please select webs to move", "Info");
+                formInfo.ShowDialog();
                 using (var form = new frmWebsDialog())
                 {
-                    form.BinNumber = TheReaderData.Text;
-                    lblBinScanFrom.Text = TheReaderData.Text;
-                    lblBinFrom.Visible = true;
-                    lblBinScanFrom.Visible = true;
+                    form.BinNumber = lblBinScanFrom.Text;
                     var result = form.ShowDialog();
                     if (result == DialogResult.OK)
                     {
                         selectedWebsToMove = form.SelectedWebs;
                         LoadWebList(selectedWebsToMove);
-                        isBinFromScaned = true;
                         lblBinToBinStatus.Text = "[Scan the bin to move selected webs]";
-                        AutoClosingMessageBox.Show("Successfully Saved", "Caption", 1000);
-                        this.barcodeScanner.StartRead(false);
-                    }
+                        AutoClosingMessageBox.Show("Successfully added to move", "Caption", 1000, MessageTypes.Success);
 
+                    }
+                    this.barcodeScanner.StartRead(false);
                 }
             }
-            else
+            if (!isBinFromScaned)
             {
-                binTo = TheReaderData.Text;
-                lblBinTo.Visible = true;
-                lblBinScanTo.Text = TheReaderData.Text;
-                lblBinScanTo.Visible = true;
-                lblBinToBinStatus.Text = "[Confirm action]";
-                btnMove.Enabled = true;
+                //check is this a valid web
+                if ("4792132408859" == TheReaderData.Text)
+                {
+                    frmMessageBox form = new frmMessageBox(MessageTypes.Error, "Invalid bin, Please try again", "Scan Error");
+                    form.ShowDialog();
+                    this.barcodeScanner.StartRead(false);
+                }
+                else
+                {
+                    using (var form = new frmWebsDialog())
+                    {
+                        form.BinNumber = TheReaderData.Text;
+                        lblBinScanFrom.Text = TheReaderData.Text;
+                        isBinFromScaned = true;
+                        lblBinFrom.Visible = true;
+                        lblBinScanFrom.Visible = true;
+                        var result = form.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            selectedWebsToMove = form.SelectedWebs;
+                            LoadWebList(selectedWebsToMove);
+                            lblBinToBinStatus.Text = "[Scan the bin to move selected webs]";
+                            AutoClosingMessageBox.Show("Successfully added to move", "Caption", 1000, MessageTypes.Success);
+                        }
+                        this.barcodeScanner.StartRead(false);
+
+                    }
+                }
+            }
+            else if (isBinFromScaned && selectedWebsToMove.Count != 0)
+            {
+                if ("4792132408859" == TheReaderData.Text)
+                {
+                    frmMessageBox form = new frmMessageBox(MessageTypes.Error, "Invalid bin, Please try again", "Scan Error");
+                    form.ShowDialog();
+                    this.barcodeScanner.StartRead(false);
+                }
+                else if (lblBinScanFrom.Text == TheReaderData.Text)
+                {
+                    frmMessageBox form = new frmMessageBox(MessageTypes.Error, "You can't move webs to same bin please scan a different bin", "Scan Error");
+                    form.ShowDialog();
+                    this.barcodeScanner.StartRead(false);
+                }
+                else
+                {
+                    binTo = TheReaderData.Text;
+                    lblBinTo.Visible = true;
+                    lblBinScanTo.Text = TheReaderData.Text;
+                    lblBinScanTo.Visible = true;
+                    lblBinToBinStatus.Text = "[Confirm action]";
+                    btnMove.Enabled = true;
+                }
             }
 
         }
+
 
         private void LocadScanner()
         {
@@ -140,7 +185,7 @@ namespace Warehouse__Mobile__Solution_PL
                 this.barcodeScanner.StartRead(false);
             }
         }
-     
+
         private void LoadWebList(List<string> selectedWebs)
         {
             foreach (var item in selectedWebs)

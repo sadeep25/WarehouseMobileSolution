@@ -14,3 +14,5 @@ C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Commo
 C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Symbol.xml
 C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Symbol.StandardForms.xml
 C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\bin\Debug\Symbol.Barcode.xml
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\obj\Debug\Warehouse_Moblie_Solution_Common.frmMessageBox.resources
+C:\Users\sadee\Desktop\Warehouse Mobile Solution\Warehouse_Moblie_Solution_Common\obj\Debug\Warehouse_Moblie_Solution_Common.csproj.GenerateResource.Cache

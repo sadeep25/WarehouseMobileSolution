@@ -6,7 +6,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.MainMenu mainMenu1;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.lblLoginHeader = new System.Windows.Forms.Label();
             this.lblScan = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -58,7 +56,6 @@
             this.ClientSize = new System.Drawing.Size(240, 267);
             this.Controls.Add(this.lblScan);
             this.Controls.Add(this.lblLoginHeader);
-            this.Menu = this.mainMenu1;
             this.Name = "frmUserLogin";
             this.Text = "Warehouse Mobile Solution";
             this.Load += new System.EventHandler(this.frmUserLogin_Load);

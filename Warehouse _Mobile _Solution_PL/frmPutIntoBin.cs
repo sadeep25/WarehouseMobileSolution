@@ -93,16 +93,36 @@ namespace Warehouse__Mobile__Solution_PL
             //write handling logic//
             if (!isWebScaned)
             {
-                lblScanWeb.Text = TheReaderData.Text;
-                lblPutIntoBinStatus.Text = "[Scan a bin to store]";
-                isWebScaned = true;
-                this.barcodeScanner.StartRead(false);
+                //check is this a valid web
+                if ("4792132408859" == TheReaderData.Text)
+                {
+                    frmMessageBox form = new frmMessageBox(MessageTypes.Error, "Invalid web, Please try again", "Scan Error");
+                    form.ShowDialog();
+                    this.barcodeScanner.StartRead(false);
+                }
+                else
+                {
+                    lblScanWeb.Text = TheReaderData.Text;
+                    lblPutIntoBinStatus.Text = "[Scan a bin to store]";
+                    isWebScaned = true;
+                    this.barcodeScanner.StartRead(false);
+                }
             }
             else
             {
-                lblScanBin.Text = TheReaderData.Text;
-                lblPutIntoBinStatus.Text = "[Click save to confirm]";
-                btnPutIntoBinSave.Enabled = true;
+                if ("4792132408859" == TheReaderData.Text)
+                {
+                    frmMessageBox form = new frmMessageBox(MessageTypes.Error, "Invalid bin, Please try again", "Scan Error");
+                    form.ShowDialog();
+                    this.barcodeScanner.StartRead(false);
+                }
+                else
+                {
+                    lblScanBin.Text = TheReaderData.Text;
+                    lblPutIntoBinStatus.Text = "[Click save to confirm]";
+                    btnPutIntoBinSave.Enabled = true;
+                }
+
 
             }
 
@@ -110,7 +130,7 @@ namespace Warehouse__Mobile__Solution_PL
 
         private void btnPutIntoBinSave_Click(object sender, EventArgs e)
         {
-            AutoClosingMessageBox.Show("Successfully Saved", "Caption", 1000);
+            AutoClosingMessageBox.Show("Successfully Saved", "Caption", 1000, MessageTypes.Success);
             lblPutIntoBinStatus.Text = "[Scan a Web]";
             this.lblScanWeb.Text = "";
             this.lblScanBin.Text = "";
@@ -122,8 +142,24 @@ namespace Warehouse__Mobile__Solution_PL
 
         private void frmPutIntoBin_Closing(object sender, CancelEventArgs e)
         {
-            this.UnloadScanner();
-            this.RefToMenu.Show();
+            if (this.lblScanBin.Text != "" || this.lblScanWeb.Text != "")
+            {
+                frmMessageBox form = new frmMessageBox(MessageTypes.Warning, "Are you sure you want to close this transaction", "Warnning");
+                var result=form.ShowDialog();
+                if (result == DialogResult.Yes)
+                {
+                    this.UnloadScanner();
+                    this.RefToMenu.Show();
+                }
+                else {
+                    e.Cancel=true;
+                }
+            }
+            else
+            {
+                this.UnloadScanner();
+                this.RefToMenu.Show();
+            }
         }
 
         private void UnloadScanner()

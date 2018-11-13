@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="Name" value="QNL" />
+    <add key="User" value="greigerfc" />
+    <add key="Password" value="abcd123" />
+    <add key="Client" value="777" />
+    <add key="AppServerHost" value="10.230.245.219" />
+    <add key="SystemNumber" value="00" />
+    <add key="Language" value="EN" />
+    <add key="HostString" value="" />
+  </appSettings>
+  <dbSettings>
+    <add key="DataSource" value="NYN-SRV-SQL01" />
+    <add key="InitialCatalogue" value="QM_PNL" />
+    <add key="UserName" value="sis" />
+    <add key="Password" value="Sis~123" />
+    <add key="DataBase" value="MS SQL Server" />
+  </dbSettings>
+</configuration>

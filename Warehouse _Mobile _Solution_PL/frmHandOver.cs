@@ -86,16 +86,34 @@ namespace Warehouse__Mobile__Solution_PL
             //write handling logic//
             if (!isProductionOrderScanned)
             {
-
-                lblProductionOrderScanned.Text = TheReaderData.Text;
-                isProductionOrderScanned = true;
-                this.LoadWebs();
-                this.barcodeScanner.StartRead(false);
+                if ("4792132408859" == TheReaderData.Text)
+                {
+                    frmMessageBox form = new frmMessageBox(MessageTypes.Error, "Invalid production order, Please try again", "Scan Error");
+                    form.ShowDialog();
+                    this.barcodeScanner.StartRead(false);
+                }
+                else
+                {
+                    lblProductionOrderScanned.Text = TheReaderData.Text;
+                    isProductionOrderScanned = true;
+                    this.LoadWebs();
+                    this.barcodeScanner.StartRead(false);
+                }
             }
             else
             {
-                lblDeliveredToScanned.Text = TheReaderData.Text;
-                this.UnloadScanner();
+
+                if ("4792132408859" == TheReaderData.Text)
+                {
+                    frmMessageBox form = new frmMessageBox(MessageTypes.Error, "Invalid user, Please try again", "No user");
+                    form.ShowDialog();
+                    this.barcodeScanner.StartRead(false);
+                }
+                else
+                {
+                    lblDeliveredToScanned.Text = TheReaderData.Text;
+                    this.UnloadScanner();
+                }
             }
         }
         private void frmHandOver_Load(object sender, EventArgs e)
@@ -135,13 +153,31 @@ namespace Warehouse__Mobile__Solution_PL
         }
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            AutoClosingMessageBox.Show("Successfully Transfered Webs", "Caption", 1000);
+            AutoClosingMessageBox.Show("Successfully Transfered Webs", "Caption", 1000, MessageTypes.Success);
             this.RefToMenu.Show();
             this.Close();
         }
         private void frmHandOver_Closing(object sender, CancelEventArgs e)
         {
-            this.RefToMenu.Show();
+            if (this.lblProductionOrderScanned.Text != "" || this.lblDeliveredToScanned.Text != "")
+            {
+                frmMessageBox form = new frmMessageBox(MessageTypes.Warning, "Are you sure you want to close this transaction", "Warnning");
+                var dialogResult = form.ShowDialog();
+                if (dialogResult == DialogResult.Yes)
+                {
+                    this.UnloadScanner();
+                    this.RefToMenu.Show();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                this.UnloadScanner();
+                this.RefToMenu.Show();
+            }
         }
     }
 }

@@ -31,6 +31,7 @@ namespace Warehouse__Mobile__Solution_PL
 
         private void frmUserLogin_Closing(object sender, CancelEventArgs e)
         {
+            UnloadScanner();
             Application.Exit();
         }
 
@@ -79,14 +80,23 @@ namespace Warehouse__Mobile__Solution_PL
         /// </summary>
         private void HandleData(Symbol.Barcode.ReaderData TheReaderData)
         {
-            //write handling logic//
-            var Text = TheReaderData.Text;
-            UnloadScanner();
-            frmMenu menu = new frmMenu();
-            menu.RefToUserLogin = this;
-            menu.userBarcode = TheReaderData.Text;
-            menu.Show();
-            this.Hide();
+            //write handling logic//          
+            if ("4792132408859" == TheReaderData.Text)
+            {
+                //MessageBox.Show("Invalid User", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
+                frmMessageBox form = new frmMessageBox(MessageTypes.Error, "Invalid barcode, Please try again","Login error");
+                form.ShowDialog();
+                this.barcodeScanner.StartRead(false);
+            }
+            else
+            {
+                UnloadScanner();
+                frmMenu menu = new frmMenu();
+                menu.RefToUserLogin = this;
+                menu.userBarcode = TheReaderData.Text;
+                menu.Show();
+                this.Hide();
+            }
         }
 
         private void LoadScanner()
@@ -99,7 +109,9 @@ namespace Warehouse__Mobile__Solution_PL
             if (!(this.isReaderInitiated))// If the reader has not been initialized
             {
                 // Display a message & exit the application.
-                MessageBox.Show("Fail to initialize barcode reader");
+                //MessageBox.Show("Fail to initialize barcode reader");
+                frmMessageBox form = new frmMessageBox(MessageTypes.Error, "Fail to initialize barcode reader", "Error");
+                form.ShowDialog();
                 Application.Exit();
             }
             else // If the reader has been initialized

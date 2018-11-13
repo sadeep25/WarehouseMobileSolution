@@ -6,7 +6,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.MainMenu mainMenu2;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainMenu2 = new System.Windows.Forms.MainMenu();
             this.lblMenuHeader = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnInHouseAcknowledgement = new System.Windows.Forms.Button();
@@ -114,7 +112,6 @@
             this.Controls.Add(this.btnInHouseAcknowledgement);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblMenuHeader);
-            this.Menu = this.mainMenu2;
             this.Name = "frmMenu";
             this.Text = "Warehouse Mobile Solution";
             this.Load += new System.EventHandler(this.frmMenu_Load);

@@ -37,10 +37,19 @@ namespace Warehouse__Mobile__Solution_PL
                     selectedWebs.Add(lvWebs.Items[i].Text.ToString());
                 }
             }
-            SelectedWebs = selectedWebs;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-           
+            if (selectedWebs.Count > 0)
+            {
+                SelectedWebs = selectedWebs;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                this.DialogResult = DialogResult.No;
+                this.Close();
+            }
+
+
         }
 
         private void LoadWebs()

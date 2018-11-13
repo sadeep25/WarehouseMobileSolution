@@ -90,6 +90,7 @@
             // 
             // btnIssueWebsIssue
             // 
+            this.btnIssueWebsIssue.Enabled = false;
             this.btnIssueWebsIssue.Location = new System.Drawing.Point(155, 228);
             this.btnIssueWebsIssue.Name = "btnIssueWebsIssue";
             this.btnIssueWebsIssue.Size = new System.Drawing.Size(72, 20);
